@@ -34,11 +34,11 @@ MIT License
 
 
 ## Contact
-For questions or feedback, please reach out to
-- Lekshmi
-- Ryan
-- Kol
-- Judymae
-- Jackie
-- Jilani
+For questions or feedback, please reach out to our Developer Team
+- [Lekshmi's GitHub] (http://github.com/lekshmisree89)
+- [Ryan's GitHub] (http://github.com/Robo-Ryan)
+- [Kol's GitHub] (http://github.com/kol3wang)
+- [Judymae's GitHub] (http://github.com/judymaej)
+- [Jackie's GitHub] (http://github.com/jmalon10)
+- [Jilani's GitHub] (http://github.com/jiju-codes)
 
