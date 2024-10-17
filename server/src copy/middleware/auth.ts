@@ -26,7 +26,7 @@ export const authenticateToken = (req: Request, res: Response, next: NextFunctio
       }
 
       // Attach the user information to the request object
-      //req.user = user as JwtPayload;
+      req.user = user as JwtPayload;
       return next(); // Call the next middleware function
     });
   } else {
