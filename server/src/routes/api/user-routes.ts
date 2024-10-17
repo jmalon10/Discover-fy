@@ -40,6 +40,7 @@ router.post('/', async (req: Request, res: Response) => {
     const newUser = await User.create({ username, email, password });
     res.status(201).json(newUser);
   } catch (error: any) {
+    console.log(error);
     res.status(400).json({ message: error.message });
   }
 });
