@@ -28,7 +28,7 @@ MIT License
 - Render for hosting
 
 ## Deployed Application
-
+Discover-fy [https://discover-fy.onrender.com/]
 
 ## App Preview
 
