@@ -5,7 +5,7 @@ export interface Track {
 }
 
 export interface PlaylistData {
-    id?: number;
+    id: number;
     title: string;
     image: string;
     tracks: Track[];
