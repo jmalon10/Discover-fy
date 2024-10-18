@@ -3,27 +3,29 @@
 
 import express from 'express';
 import type { Request, Response } from 'express';
-// import { artists } from '../../models/index.js'; 
+
 
 const router = express.Router();
 
 // GET /api/artists/tracksByArtist 
-router.get('/', async (req: Request, res: Response) => {
+router.get('/tracksByArtist', async (req: Request, res: Response) => {
   try {
-    const {artists} = req.body;
+    const {artist} = req.body;
 
-    const tracks = await fetch(
+    const response = await fetch(
         // get tracks from lastfm by artist
-        `https://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=${artists}
+        `https://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=${artist}
         &api_key=39e9d03aad187addccc2e2fba21169b0&format=json`);
 
 
     // send the tracks as json
-     const tracksJson = await tracks.json();
+     const tracks = await response.json();
+     return res.json(tracks);
+
 
     // res.json(users);
   } catch (error: any) {
-    res.status(500).json({ message: error.message });
+    return res.status(500).json({ message: error.message });
   }
 });
 
@@ -90,4 +92,4 @@ router.get('/', async (req: Request, res: Response) => {
 //   }
 // });
 
-// export { router as userRouter };
+export { router as artistRoute };

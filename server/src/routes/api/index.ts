@@ -5,7 +5,7 @@ import { artistRoute } from './artist-route.js'
 const router = Router();
 
 router.use('/users', userRouter);
-router.use('/artists', userRouter);
+router.use('/artists', artistRoute);
 
 
 export default router;
