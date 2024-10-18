@@ -1,81 +1,54 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from "react";
+import { RecommendedArtist } from "../interfaces/RecommendedArtist"
 
-const ArtistForm: React.FC = () => {
-    const [artistName, setArtistName] = useState('');
+import RecommendedArtistCard from "../components/RecommendedArtistCard";
+
+const Discover = () => {
+    const [artists, setArtists] = useState<RecommendedArtist[] | null>([] as RecommendedArtist[]);
     const [error, setError] = useState<string | null>(null);
-    const [suggestion, setSuggestion] = useState<string | null>(null);
+    //create a form component that will allow users to enter their favorite artist
+    // uses the useState hook to create a state variable called artists, 
+    //which is an array of RecommendedArtist objects. 
+    //We initialize it to an empty array.
+    // when the component loads...
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setArtistName(e.target.value);
-        setError(null);
-        setSuggestion(null);
-    };
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        if (!artistName) {
-            setError('Artist name is required.');
-            return;
-        }
+    
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      console.log("Form submitted");
+      setArtists([]);
+      getRecommendedArtistData();
+      
+    }// create a function called handleSubmit that logs "Form submitted" 
+    //to the console when the form is submitted.
 
-        try {
-            const response = await fetch('api/artist-info', {   // Replace with your API endpoint
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ artist: artistName }),
-            });
-            const data = await response.json();
-
-            if (data.error) {
-                if (data.error === 6) { // Artist not found
-                    setError(`Artist not found: ${artistName}`);
-                    setSuggestion(data.message); // Assuming Last.fm returns suggestions in the message
-                } else {
-                    setError(`Error: ${data.message}`);
-                }
-                return;
-            }
-
-            // Save artist to the database (replace with your API call)
-            await saveArtistToDatabase(artistName);
-            setArtistName(''); // Reset input after successful save
-            setError(null); // Clear any previous error
-            setSuggestion(null); // Clear suggestion
-        } catch (error) {
-            console.error(error);
-            setError('An error occurred while fetching artist information.');
-        }
-    };
-
-    const saveArtistToDatabase = async (artist: string) => {
-        // Replace this with your actual database API call
-        await fetch('/api/artists', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ name: artist }),
-        });
-    };
+    
+    
+    useEffect(() => {
+      getRecommendedArtistData();
+    }, []);
+    const getRecommendedArtistData = async () => {
+      // fetch the data from the API
+      const response = await fetch("/api/recommendedArtists");
+      const data = await response.json();
+      console.log(data);
+      if (response.ok) {
+        setArtists(data);// set the artists state variable to the data we fetched
+      } else {
+        setError("An error occurred");
+      }
+    }
+    //  we want to fetch the artist data and put it in state
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label htmlFor="artistName">Artist Name:</label>
-                <input
-                    type="text"
-                    id="artistName"
-                    value={artistName}
-                    onChange={handleChange}
-                />
-            </div>
-            {error && <p style={{ color: 'red' }}>{error}</p>}
-            {suggestion && <p style={{ color: 'blue' }}>Did you mean: {suggestion}?</p>}
-            <button type="submit">Submit</button>
-        </form>
+      <section>
+        <h1>This is the discover page!</h1>
+        {artists?.map((artist) => (
+          <RecommendedArtistCard key={artist.Name} artist={artist} />
+        ))}
+        </section>
     );
-};
-
-export default  ArtistForm;
+  };
+  
+  export default Discover;
