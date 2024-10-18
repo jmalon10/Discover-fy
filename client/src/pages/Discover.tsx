@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { RecommendedArtist } from "../interfaces/recommendedArtist";
+import RecommendedArtistCard from "../components/RecommendedArtistCard";
 
 const Discover = () => {
     const [artists, setArtists] = useState<RecommendedArtist[] | null>([
@@ -6,6 +8,10 @@ const Discover = () => {
         Name: "Lady Gaga",
         TopTracks: ["Bad Romance", "Judas", "Rain on Me"],
       },
+      {
+        Name: "Ariana Grande",
+        TopTracks: ["7 Rings", "Thank You Next", "Into You"],
+      },  
     ] as RecommendedArtist[]);
     // when the component loads...
     useEffect(() => {
@@ -22,6 +28,9 @@ const Discover = () => {
     return (
       <section>
         <h1>This is the discover page!</h1>
+        {artists?.map((artist) => (
+          <RecommendedArtistCard key={artist.Name} artist={artist} />
+        ))}
         </section>
     );
   };
