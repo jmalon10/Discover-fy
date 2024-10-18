@@ -1,18 +1,18 @@
 import React from 'react';
 import Auth from '../utils/auth';
 
-interface PootectedRouteProps {
+interface ProtectedRouteProps {
     children: JSX.Element;
 }
 
-export const PootectedRoute: React.FC<PootectedRouteProps> = ({ children }) => {
+export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
     const isLoggedIn = Auth.loggedIn();
 
     if (!isLoggedIn) {
         return (
             <div>
-                <h1>No authorized</h1>
-                <p>You must be logged in to view this page.</p>
+                <h1>Welcome to Discover-fy</h1>
+                <p>Please login to continue</p>
             </div>
         )
     } else {

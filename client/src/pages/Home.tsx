@@ -8,7 +8,6 @@ import { useState, useEffect, useLayoutEffect } from "react";
 import { retrieveUsers } from "../api/userAPI";
 import type { UserData } from "../interfaces/UserData";
 import ErrorPage from "./ErrorPage";
-//import UserList from '../components'
 import auth from '../utils/auth';
 
 const HomePage = () => {
@@ -51,18 +50,8 @@ const HomePage = () => {
 
 
   return (
-    <>
-    // <div className="container mt-5">
-    {
-      !loginCheck ? (
-          <div className='login-notice'>
-              <h1>
-                  Login to view all your Playlists!
-              </h1>
-          </div>
-      ) : (
-          
 
+          
 
     <div className="container mt-5">
       {/* Header */}
@@ -98,8 +87,12 @@ const HomePage = () => {
         </Link>
       </section>
     </div>
-    </>
   );
-};
+}
+
+
+
+ 
+
 
 export default HomePage;
