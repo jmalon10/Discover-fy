@@ -1,8 +1,8 @@
- {
- "name": "discover-fy",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+{
+  "name": "main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run client:build && npm run server",
