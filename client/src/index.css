@@ -1739,3 +1739,12 @@ form [type='radio'] {
   font-weight: bold;
   color: #007BFF; /* Bootstrap primary color */
 }
+
+
+/* Home.css */
+
+.artist-image {
+  width: 100%;  /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 200px; /* Set a maximum width */
+}
