@@ -16,10 +16,19 @@ const Discover = () => {
     ] as RecommendedArtist[]);
     // when the component loads...
     useEffect(() => {
-      retrieveArtists();
+      fetchArtists();
     }, []);
     //  we want to fetch the artist data and put it in state
-
+    const fetchArtists = async () => {
+      try { 
+    const data = await retrieveArtists();
+          setArtists(data)
+      } 
+      catch (err) {
+        console.log('Error from data retrieval:', err);
+      }
+    }
+    
     return (
       <section>
         <h1>This is the discover page!</h1>
