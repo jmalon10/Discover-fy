@@ -3,8 +3,35 @@
 //import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
 
 const HomePage = () => {
+  const [artists, setArtists] = useState([]);
+
+
+
+
+
+    useEffect(() => {
+        // Fetch artist data when the component mounts
+        const fetchArtists = async () => {
+          try {
+            const apiKey = process.env.REACT_APP_LASTFM_API_KEY; // Store your API key in a .env file
+            const response = await axios.get(
+              `https://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=${apiKey}&format=json`
+            );
+            setArtists(response.data.artists.artist); // Store artists in the state
+          } catch (error) {
+            console.error('Error fetching artist data:', error);
+          }
+        };
+    
+        fetchArtists();
+      }, []);
+
+
     return (
         <div>
        <header>
