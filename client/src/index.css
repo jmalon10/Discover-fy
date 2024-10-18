@@ -1706,3 +1706,36 @@ form [type='radio'] {
     align-content: center;
   }
 }
+/* Navbar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: lemonchiffon; /* Mint green */
+}
+
+.navbar h1 {
+  margin: 0;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar li {
+  margin-left: 20px;
+}
+
+.navbar .nav-link {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar .nav-link.active {
+  font-weight: bold;
+  color: #007BFF; /* Bootstrap primary color */
+}
