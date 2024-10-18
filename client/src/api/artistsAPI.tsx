@@ -9,8 +9,13 @@ const retrieveArtists = async () => {
         }
       });
       const data = await response.json();
-      console.log(`retreiving artist data ${data}`);
-    
+      console.log(`retreiving artist data`, data);
+
+      const tracks = data.toptracks.track;
+      tracks.forEach((track: any, index: number) => {
+        console.log(`Track ${index + 1}: ${track.name}`);
+      });
+
       if(!response.ok) {
         throw new Error('Invalid user API response, check network tab!');
       }
