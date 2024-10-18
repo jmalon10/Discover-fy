@@ -1,18 +1,14 @@
 import { useEffect, useState } from "react";
-import { RecommendedArtist } from "../interfaces/recommendedArtist";
+import { RecommendedArtist } from "../interfaces/RecommendedArtist"
+
 import RecommendedArtistCard from "../components/RecommendedArtistCard";
 
 const Discover = () => {
-    const [artists, setArtists] = useState<RecommendedArtist[] | null>([
-      {
-        Name: "Lady Gaga",
-        TopTracks: ["Bad Romance", "Judas", "Rain on Me"],
-      },
-      {
-        Name: "Ariana Grande",
-        TopTracks: ["7 Rings", "Thank You Next", "Into You"],
-      },  
-    ] as RecommendedArtist[]);
+    const [artists, setArtists] = useState<RecommendedArtist[] | null>([] as RecommendedArtist[]);
+    const [error, setError] = useState<string | null>(null);
+    // uses the useState hook to create a state variable called artists, 
+    //which is an array of RecommendedArtist objects. 
+    //We initialize it to an empty array.
     // when the component loads...
     useEffect(() => {
       getRecommendedArtistData();
