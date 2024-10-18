@@ -29,9 +29,9 @@ const Discover = () => {
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault(); // Prevent page reload
-    console.log("Form submitted");
+    console.log("Form submitted");//
 
-    // Optionally, send favoriteArtist to an API or fetch artist info
+    //  send favoriteArtist to an API or fetch artist info
     if (favoriteArtist) {
       try {
         const response = await fetch(`/api/artists?name=${encodeURIComponent(favoriteArtist)}`);
@@ -65,12 +65,12 @@ const Discover = () => {
         <button type="submit">Submit</button>
       </form>
 
-      {/* Display error if it exists */}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+     
 
       {/* Map through the list of recommended artists */}
       {artists?.map((artist) => (
         <RecommendedArtistCard key={artist.Name} artist={artist} />
+        
       ))}
     </section>
   );
