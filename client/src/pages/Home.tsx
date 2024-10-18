@@ -1,16 +1,46 @@
-
-
-//import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../index.css';   
 
 
+
+
+interface Artist {
+  name: string;
+  image: string;
+}
+
 const HomePage = () => {
+  const [artists, setArtists] = useState<Artist[]>([]);
+
+  useEffect(() => {
+    // Function to fetch artist info from Last.fm API
+    const fetchArtistImage = async (artistName: string) => {
+      const API_KEY = import.meta.env.VITE_LASTFM_API_KEY as string;
+      const response = await fetch(
+        `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${(artistName)}&api_key=${API_KEY}&format=json`
+      );
+      const data = await response.json();
+      const image = data.artist?.image?.find((img: any) => img.size === 'extralarge')?.['#text'] || '';
+      return image;
+    };
+
+    // Fetch artist names and images
+    const loadArtistImages = async () => {
+      const artistNames = ['Ariana Grande', 'Taylor Swift', 'Ed Sheeran', 'Billie Eilish']; // List of artist names to display
+      const updatedArtists = await Promise.all(
+        artistNames.map(async (artistName) => {
+          const image = await fetchArtistImage(artistName);
+          return { name: artistName, image };
+        })
+      );
+      setArtists(updatedArtists);
+    };
+
+    loadArtistImages();
+  }, []);
 
   return (
-
-          
-
     <div className="container mt-5">
       {/* Header */}
       <header className="text-center">
@@ -22,19 +52,13 @@ const HomePage = () => {
       <section className="artist-images text-center mt-4">
         <h2>Discover New Artists</h2>
         <div className="row mt-3">
-        
-        
-            <div className="col-md-3">
-                <img src=""alt="Ariana Grande" className="img-fluid" />
-                <p>Artist 1</p>
+          {artists.map((artist, index) => (
+            <div key={index} className="col-md-3">
+              <img src={artist.image} alt={artist.name} className="img-fluid" />
+              <p>{artist.name}</p>
             </div>
-          <div className="col-md-3">
-            <img src=""alt="Taylor Swift" className="img-fluid" />
-            <p>Artist 2</p>
-          </div>
-
+          ))}
         </div>
-
       </section>
 
       {/* Call to Action Button */}
@@ -47,10 +71,5 @@ const HomePage = () => {
     </div>
   );
 }
-
-
-
- 
-
 
 export default HomePage;
