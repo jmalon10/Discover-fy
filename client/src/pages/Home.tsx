@@ -57,7 +57,19 @@ const HomePage = () => {
             </div>
         </div>
       </section>
+
+      {/* //call to action */}
+
+        <section className ="text-center mt-4">
+            <h2>Ready to get started?</h2>
+            <Link to="/discover" className="btn btn-primary">
+                <button>Discover New Music</button>
+              
+            </Link>
+        </section>
+
        
         </div>
     );
 }
+ export default HomePage;
