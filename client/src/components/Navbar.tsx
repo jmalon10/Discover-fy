@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import auth from '../utils/auth';
 
 const Navbar = () => {
   // State to track the login status
   const [loginCheck, setLoginCheck] = useState(false);
+  const currentPage = useLocation().pathname;
 
   // Function to check if the user is logged in using auth.loggedIn() method
   const checkLogin = () => {
@@ -19,10 +20,40 @@ const Navbar = () => {
   }, [loginCheck]);  // Dependency array ensures useEffect runs when loginCheck changes
 
   return (
-    <div className="display-flex justify-space-between align-center py-2 px-5 mint-green">
+    <div className="navbar">
       <h1>
         DISCOVER-FY
       </h1>
+      <ul className="display-flex">
+      <li className="nav-item">
+        <Link
+          to="/"
+          // This is a conditional (ternary) operator that checks to see if the current page is "Home"
+          // If it is, we set the current page to 'nav-link-active', otherwise we set it to 'nav-link'
+          className={currentPage === '/' ? 'nav-link active' : 'nav-link'}
+        >
+          Home
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link
+          to="/Discover"
+          // Check to see if the currentPage is `About`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
+          className={currentPage === '/Discover' ? 'nav-link active' : 'nav-link'}
+        >
+          Discover 
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link
+          to="/Playlists"
+          // Check to see if the currentPage is `About`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
+          className={currentPage === '/Playlists' ? 'nav-link active' : 'nav-link'}
+        >
+          Playlists
+        </Link>
+      </li>
+    </ul>
       <div>
         {
           // Conditional rendering based on loginCheck state
