@@ -2,14 +2,15 @@ import Auth from '../utils/auth';
 
 const retrieveArtists = async () => {
     try {
-      const response = await fetch('/api/artists', {
+      const response = await fetch('/api/artists/tracksByArtist', {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${Auth.getToken()}`
         }
       });
       const data = await response.json();
-  
+      console.log(`retreiving artist data ${data}`);
+    
       if(!response.ok) {
         throw new Error('Invalid user API response, check network tab!');
       }

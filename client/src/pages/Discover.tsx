@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { RecommendedArtist } from "../interfaces/recommendedArtist";
 import RecommendedArtistCard from "../components/RecommendedArtistCard";
-import {retreiveArtists} from "../api/artistAPI";
+import { retrieveArtists} from "../api/artistsAPI"
 
 const Discover = () => {
     const [artists, setArtists] = useState<RecommendedArtist[] | null>([
@@ -16,18 +16,8 @@ const Discover = () => {
     ] as RecommendedArtist[]);
     // when the component loads...
     useEffect(() => {
-      getRecommendedArtistData();
+      retrieveArtists();
     }, []);
-    const getRecommendedArtistData = async () => {
-      // fetch the data from the API
-      try {
-        const data = await retrieveUsers();
-        setUsers(data)
-    } catch (err) {
-        console.error('Failed to retrieve tickets:', err);
-        setError(true);
-    }
-    }
     //  we want to fetch the artist data and put it in state
 
     return (
