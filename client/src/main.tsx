@@ -8,7 +8,7 @@ import ErrorPage from './pages/ErrorPage.tsx';
 import Home from './pages/Home.tsx';
 import Login from './pages/Login.tsx';
 import Discover from './pages/Discover.tsx';
-import Playlists from './pages/Playlists.tsx';
+// import Playlists from './pages/Playlists.tsx';
 
 const router = createBrowserRouter([
   {
@@ -28,10 +28,10 @@ const router = createBrowserRouter([
         path: '/discover',
         element: <Discover />
       }, 
-      {
-        path: '/playlists',
-        element: <Playlists />
-      }, 
+      // {
+      //   path: '/playlists',
+      //   element: <Playlists />
+      // }, 
     ]
   }
 ])

@@ -14,9 +14,8 @@ router.get('/tracksByArtist', async (req: Request, res: Response) => {
 
     const response = await fetch(
         // get tracks from lastfm by artist
-        `https://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=${artist}
-        &api_key=39e9d03aad187addccc2e2fba21169b0&format=json`);
-
+        `https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=${artist}&api_key=39e9d03aad187addccc2e2fba21169b0&format=json`);
+        
 
     // send the tracks as json
      const tracks = await response.json();
