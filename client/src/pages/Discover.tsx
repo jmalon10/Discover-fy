@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
 
 const Discover = () => {
-    const [artist, setArtist] = useState<RecommendedArtist | null>({} as RecommendedArtist);
+    const [artists, setArtists] = useState<RecommendedArtist[] | null>([
+      {
+        Name: "Lady Gaga",
+        TopTracks: ["Bad Romance", "Judas", "Rain on Me"],
+      },
+    ] as RecommendedArtist[]);
     // when the component loads...
     useEffect(() => {
       getRecommendedArtistData();
@@ -17,7 +22,6 @@ const Discover = () => {
     return (
       <section>
         <h1>This is the discover page!</h1>
-
         </section>
     );
   };
