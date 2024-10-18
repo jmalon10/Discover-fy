@@ -68,8 +68,13 @@ const HomePage = () => {
             </Link>
         </section>
 
-       
+       {/* //footer */}
+         <footer className="text-center mt-4">
+            <p>&copy; 2021 discover-FY</p>
+        </footer>
+
         </div>
+    
     );
 }
  export default HomePage;
