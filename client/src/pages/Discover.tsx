@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { RecommendedArtist } from "../interfaces/recommendedArtist";
 import RecommendedArtistCard from "../components/RecommendedArtistCard";
-import
 
 const Discover = () => {
     const [artists, setArtists] = useState<RecommendedArtist[] | null>([
