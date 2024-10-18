@@ -14,6 +14,7 @@ const HomePage = () => {
       console.log('Inside ')
       try {
         const apiKey = process.env.LASTFM_API_KEY; // Store your API key in a .env file
+        console.log('API Key:', apiKey);
         const response = await axios.get(
           `http://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=${apiKey}&format=json`
         );
@@ -51,8 +52,33 @@ const HomePage = () => {
         </div>
       </section>
 
-      
-
+    <section className="container">
+        <h2>Top Artists</h2>
+        <div className="row">
+          {artists.map((artist) => (
+            <div key={artist.mbid} className="col-md-3">
+              <div className="card mb-4">
+                <img
+                  src={artist.image[2]['#text']}
+                  alt={artist.name}
+                  className="card-img-top"
+                />
+                <div className="card-body">
+                  <h5 className="card-title">{artist.name}</h5>
+                  <a
+                    href={artist.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn btn-primary"
+                  >
+                    View Artist
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        </section>
       
 
       {/* Footer */}
