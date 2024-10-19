@@ -1,41 +1,41 @@
 import { useEffect, useState } from "react";
-import { RecommendedArtist } from "../interfaces/RecommendedArtist";
+import RecommendedArtist from "../interfaces/RecommendedArtist";
 import RecommendedArtistCard from "../components/RecommendedArtistCard";
-import { retrieveArtists} from "../api/artistsAPI"
+import { retrieveArtists } from "../api/artistsAPI";
 
 const Discover = () => {
-const [error, setError] = useState<string | null>(null);
-const [favoriteArtist, setFavoriteArtist] = useState<string>(''); // State to capture user's input
-    const [artists, setArtists] = useState<RecommendedArtist[] | null>([
-      {
-        Name: "Lady Gaga",
-        TopTracks: ["Bad Romance", "Judas", "Rain on Me"],
-      },
-      {
-        Name: "Ariana Grande",
-        TopTracks: ["7 Rings", "Thank You Next", "Into You"],
-      },  
-    ] as RecommendedArtist[]);
-    // when the component loads...
-    useEffect(() => {
-      fetchArtists();
-    }, []);
-    //  we want to fetch the artist data and put it in state
-    const fetchArtists = async () => {
-      try { 
-    const data = await retrieveArtists();
-          setArtists(data)
-      } 
-      catch (err) {
-        console.log('Error from data retrieval:', err);
-      }
-    };
+  const [favoriteArtist, setFavoriteArtist] = useState<string>(''); // State to capture user's input
+  const [error, setError] = useState<string | null>(null);
+  const [artists, setArtists] = useState<RecommendedArtist[]>([
+    {
+      Name: "Lady Gaga",
+      TopTracks: ["Bad Romance", "Judas", "Rain on Me"],
+    },
+    {
+      Name: "Ariana Grande",
+      TopTracks: ["7 Rings", "Thank You Next", "Into You"],
+    },
+  ]);
 
+  // when the component loads...
+  useEffect(() => {
+    fetchArtists();
+  }, []);
+
+  //  we want to fetch the artist data and put it in state
+  const fetchArtists = async () => {
+    try {
+      const data = await retrieveArtists();
+      setArtists(data);
+    } catch (err) {
+      console.log('Error from data retrieval:', err);
+    }
+  };
 
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault(); // Prevent page reload
-    console.log("Form submitted");//
+    console.log("Form submitted");
 
     //  send favoriteArtist to an API or fetch artist info
     if (favoriteArtist) {
@@ -70,13 +70,13 @@ const [favoriteArtist, setFavoriteArtist] = useState<string>(''); // State to ca
         />
         <button type="submit">Submit</button>
       </form>
+
       {/* Display error message if any */}
       {error && <p>{error}</p>}
-     
+
       {/* Map through the list of recommended artists */}
       {artists?.map((artist) => (
         <RecommendedArtistCard key={artist.Name} artist={artist} />
-        
       ))}
     </section>
   );
