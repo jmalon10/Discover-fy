@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../index.css';   
+import  Artist  from '../interfaces/artists';
 
-const API_KEY =import.meta.env.LASTFM_API_KEY as string;
+//const API_KEY =import.meta.env.LASTFM_API_KEY as string;
 
-interface Artist {
-  name: string;
-  image: string;
-}
+
 
 const HomePage = () => {
   const [artists, setArtists] = useState<Artist[]>([]);
@@ -38,7 +36,7 @@ const HomePage = () => {
 
     // Fetch artist names and images
     const loadArtistImages = async () => {
-      const artistNames = ['Ariana Grande', 'Taylor Swift', 'Ed Sheeran', 'Billie Eilish']; // List of artist names to display
+      const artistNames = ['Ariana Grande', 'Taylor Swift', 'Ed Sheeran']; // List of artist names to display
       const updatedArtists = await Promise.all(
         artistNames.map(async (artistName) => {
           const image = await fetchArtistImage(artistName);
