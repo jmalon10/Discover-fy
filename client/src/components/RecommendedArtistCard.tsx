@@ -1,5 +1,5 @@
 import type React from 'react';
-import type { RecommendedArtist } from '../interfaces/recommendedArtist';
+import type { RecommendedArtist } from '../interfaces/RecommendedArtist'
 
 // Define the props for the component
 interface RecommendedArtistCardProps {
