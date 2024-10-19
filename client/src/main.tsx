@@ -8,8 +8,9 @@ import ErrorPage from './pages/ErrorPage.tsx';
 import Home from './pages/Home.tsx';
 import Login from './pages/Login.tsx';
 import Discover from './pages/Discover.tsx';
-import Playlists from './pages/Playlists.tsx';
+// import Playlists from './pages/Playlists.tsx';
 import { ProtectedRoute } from './components/ProtectedRoute.tsx';
+
 
 const router = createBrowserRouter([
   {
@@ -29,10 +30,10 @@ const router = createBrowserRouter([
         path: '/discover',
         element: (<ProtectedRoute><Discover /></ProtectedRoute>)//added protected route
       }, 
-      {
-        path: '/playlists',
-        element: (<ProtectedRoute><Playlists /></ProtectedRoute>)
-      }, 
+      // {
+      //   path: '/playlists',
+      //   element: <Playlists />
+      // }, 
     ]
   }
 ])
