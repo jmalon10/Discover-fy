@@ -1,29 +1,38 @@
 import { useEffect, useState } from "react";
 import { RecommendedArtist } from "../interfaces/RecommendedArtist";
 import RecommendedArtistCard from "../components/RecommendedArtistCard";
+import { retrieveArtists} from "../api/artistsAPI"
+const [artists, setArtists] = useState<RecommendedArtist[]>([]); // Array of recommended artists
+const [error, setError] = useState<string | null>(null);
+const [favoriteArtist, setFavoriteArtist] = useState<string>(''); // State to capture user's input
+  
 
 const Discover = () => {
-  const [artists, setArtists] = useState<RecommendedArtist[]>([]); // Array of recommended artists
-  const [error, setError] = useState<string | null>(null);
-  const [favoriteArtist, setFavoriteArtist] = useState<string>(''); // State to capture user's input
-  
-  // Fetch recommended artist data when the component loads
-  useEffect(() => {
-    getRecommendedArtistData();
-  }, []);
-
-  const getRecommendedArtistData = async () => {
-    try {
-      const response = await fetch("/api/recommendedArtists");
-      const data = await response.json();
-      if (response.ok) {
-        setArtists(data);
-      } else {
-        setError("An error occurred");
+    const [artists, setArtists] = useState<RecommendedArtist[] | null>([
+      {
+        Name: "Lady Gaga",
+        TopTracks: ["Bad Romance", "Judas", "Rain on Me"],
+      },
+      {
+        Name: "Ariana Grande",
+        TopTracks: ["7 Rings", "Thank You Next", "Into You"],
+      },  
+    ] as RecommendedArtist[]);
+    // when the component loads...
+    useEffect(() => {
+      fetchArtists();
+    }, []);
+    //  we want to fetch the artist data and put it in state
+    const fetchArtists = async () => {
+      try { 
+    const data = await retrieveArtists();
+          setArtists(data)
+      } 
+      catch (err) {
+        console.log('Error from data retrieval:', err);
       }
-    } catch (error) {
-      setError("Failed to fetch recommended artists");
     }
+    );
   };
 
   // Handle form submission

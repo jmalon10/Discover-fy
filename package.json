@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "dotenv": "^16.4.5",
+    "seed": "^0.4.4",
     "vite": "^5.4.9"
   }
 }

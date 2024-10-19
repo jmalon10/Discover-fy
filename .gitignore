@@ -23,4 +23,15 @@ dist-ssr
 *.sln
 *.sw?
 
+# Ignore macOS system files
+.DS_Store
+
+# Ignore screenshots
+*.png
+
+# Ignore audio and video files
+*.mov
+*.m4a
+
+
 package-lock.json
