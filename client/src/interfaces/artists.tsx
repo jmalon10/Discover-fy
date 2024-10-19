@@ -1,7 +1,6 @@
 
-export interface Artist {
+export default interface Artist {
     name: string;      // Name of the artist
-    mbid: string;      // MusicBrainz ID of the artist
     url: string;       // URL to the artist's Last.fm page
     image: Array<{     // Array of images in different sizes
       '#text': string; // URL of the image

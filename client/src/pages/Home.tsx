@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../index.css';   
 
-
-
+const API_KEY =import.meta.env.LASTFM_API_KEY as string;
 
 interface Artist {
   name: string;
@@ -16,13 +15,25 @@ const HomePage = () => {
   useEffect(() => {
     // Function to fetch artist info from Last.fm API
     const fetchArtistImage = async (artistName: string) => {
-      const API_KEY = import.meta.env.VITE_LASTFM_API_KEY as string;
-      const response = await fetch(
-        `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${(artistName)}&api_key=${API_KEY}&format=json`
-      );
-      const data = await response.json();
-      const image = data.artist?.image?.find((img: any) => img.size === 'extralarge')?.['#text'] || '';
-      return image;
+      try {
+        const response = await fetch(
+          `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${encodeURIComponent(artistName)}&api_key=045d5788747399c059939c53d984ca59&format=json`
+        );
+        const data = await response.json();
+        console.log('API response:', data); // Inspect the full API response
+
+        if (data.artist && data.artist.image) {
+          // Find the image with the size 'extralarge'
+          const image = data.artist.image.find((img: any) => img.size === 'extralarge')?.['#text'];
+          return image || ''; // Return image or an empty string if not found
+        } else {
+          console.error('No image found for artist:', artistName);
+          return ''; // Return an empty string if no image is found
+        }
+      } catch (error) {
+        console.error('Error fetching artist image:', error);
+        return ''; // Return an empty string on error
+      }
     };
 
     // Fetch artist names and images
@@ -54,7 +65,11 @@ const HomePage = () => {
         <div className="row mt-3">
           {artists.map((artist, index) => (
             <div key={index} className="col-md-3">
-              <img src={artist.image} alt={artist.name} className="img-fluid" />
+              {artist.image ? (
+                <img src={artist.image} alt={artist.name} className="img-fluid" />
+              ) : (
+                <p>No image available</p>
+              )}
               <p>{artist.name}</p>
             </div>
           ))}
@@ -70,6 +85,6 @@ const HomePage = () => {
       </section>
     </div>
   );
-}
+};
 
 export default HomePage;
