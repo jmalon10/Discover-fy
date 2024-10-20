@@ -9,6 +9,7 @@ const Home = () => {
   const [users, setUsers] = useState<UserData[]>([]);
   const [error, setError] = useState(false);
   const [loginCheck, setLoginCheck] = useState(false);
+  
 
   useEffect(() => {
     if (loginCheck) {
@@ -45,11 +46,16 @@ const Home = () => {
     <>
       {!loginCheck ? (
         <div className='login-notice'>
-          <h1>Login to view all your Playlists!</h1>
+          <h1>User not logged In !!</h1>
+          <p>Please login to continue</p>
         </div>
       ) : (
         <ArtistSearch />
       )}
+      <footer>
+        <p>&copy; 2024</p>
+      </footer>
+
     </>
   );
 };

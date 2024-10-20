@@ -10,16 +10,15 @@ const router = express.Router();
 // GET /api/artists/tracksByArtist 
 router.get('/tracksByArtist', async (req: Request, res: Response) => {
   try {
-    const {artist} = req.body;
+    const { artist } = req.query;
 
     const response = await fetch(
-        // get tracks from lastfm by artist
-        `https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=${artist}&api_key=39e9d03aad187addccc2e2fba21169b0&format=json`);
-        
+      // get tracks from lastfm by artist
+      `https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=${artist}&api_key=39e9d03aad187addccc2e2fba21169b0&format=json`);
 
     // send the tracks as json
-     const tracks = await response.json();
-     return res.json(tracks);
+    const tracks = await response.json();
+    return res.json(tracks);
 
 
     // res.json(users);
@@ -27,6 +26,4 @@ router.get('/tracksByArtist', async (req: Request, res: Response) => {
     return res.status(500).json({ message: error.message });
   }
 });
-
-// GET /api/artists/albumsByArtist
 export { router as artistRoute };
