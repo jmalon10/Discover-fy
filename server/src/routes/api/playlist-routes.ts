@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { createPlaylist, getPlaylists, updatePlaylist, deletePlaylist } from '../api/playlistService'; // Assuming you have these controller functions
+import { createPlaylist, getPlaylists, updatePlaylist, deletePlaylist } from '../../controllers/playlistControllers'; // Correct path
 
 const router = Router();
 

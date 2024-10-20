@@ -3,6 +3,7 @@ import PlaylistCard from '../components/Playlist'; // Component to display each 
 import { getPlaylists, createPlaylist, updatePlaylist, deletePlaylist } from '../api/playlistService'; // API functions
 import type { PlaylistData } from '../interfaces/Playlist';
 
+
 const Playlists = () => {
   const [playlists, setPlaylists] = useState<PlaylistData[]>([]);
 
