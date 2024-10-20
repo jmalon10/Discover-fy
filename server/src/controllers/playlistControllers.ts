@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
-import Playlist from '../models/playlu'; // Assuming you have a Sequelize model for Playlist
+import Playlist from '../models/playlist'; // Corrected to the right path for the model
 
 // Get all playlists
-export const getPlaylists = async (req: Request, res: Response) => {
+export const getPlaylists = async (_req: Request, res: Response) => {
   try {
     const playlists = await Playlist.findAll();
     res.status(200).json(playlists);
