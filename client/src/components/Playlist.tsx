@@ -1,19 +1,17 @@
 import React from 'react';
-import type { PlaylistData } from "../interfaces/Playlist"; // Define PlaylistData in interfaces
-
+import type { PlaylistData } from "../interfaces/Playlist"; // Import PlaylistData type
 
 // Define the props for the component
 interface PlaylistProps {
-    playlists: PlaylistData[] | null; // Playlists can be an array of PlaylistData objects or null
-    handleDelete?: (id: number) => void; // Optional delete handler
+    playlists: PlaylistData[] | null;
+    handleUpdate: (id: number) => void;
+    handleDelete: (id: number) => void;
 }
 
-const PlaylistCard: React.FC<PlaylistProps> = ({ playlists, handleDelete }) => {
+const PlaylistCard: React.FC<PlaylistProps> = ({ playlists, handleUpdate, handleDelete }) => {
     return (
         <>
-            <h2 className="pb-5">
-                Check out all your Playlists!
-            </h2>
+            <h2 className="pb-5">Check out all your Playlists!</h2>
             {playlists && playlists.map((playlist) => (
                 <div className="row align-center mb-5" key={playlist.id}>
                     <div className="col-md-6">
@@ -33,15 +31,8 @@ const PlaylistCard: React.FC<PlaylistProps> = ({ playlists, handleDelete }) => {
                                 </li>
                             ))}
                         </ul>
-                        {/* Optional delete functionality */}
-                        {handleDelete && (
-                            <button 
-                                className="btn btn-danger" 
-                                onClick={() => handleDelete(playlist.id)}
-                            >
-                                Delete Playlist
-                            </button>
-                        )}
+                        <button onClick={() => handleUpdate(playlist.id)}>Update Playlist</button> {/* Button to update playlist */}
+                        <button onClick={() => handleDelete(playlist.id)}>Delete Playlist</button> {/* Button to delete playlist */}
                     </div>
                 </div>
             ))}
