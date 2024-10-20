@@ -1,4 +1,4 @@
 export interface RecommendedArtist {
-  readonly Name: string; //from form entry
-  readonly TopTracks: string[]; //need API call Artist.getTopTracks
+  readonly name: string; //from form entry
+  readonly toptracks: string[]; //need API call Artist.getTopTracks
 };
