@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import RecommendedArtist from "../interfaces/RecommendedArtist";
+import { RecommendedArtist } from "../interfaces/RecommendedArtist";
 import RecommendedArtistCard from "../components/RecommendedArtistCard";
 import { retrieveArtists } from "../api/artistsAPI";
 
@@ -26,7 +26,7 @@ const Discover = () => {
   const fetchArtists = async () => {
     try {
       const data = await retrieveArtists();
-      setArtists(data);
+      setArtists(data.tracks);
     } catch (err) {
       console.log('Error from data retrieval:', err);
     }
