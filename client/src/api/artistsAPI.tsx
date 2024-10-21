@@ -21,4 +21,5 @@ const retrieveArtists = async () => {
   }
   
   export { retrieveArtists };
+
   

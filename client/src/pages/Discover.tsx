@@ -3,6 +3,7 @@ import { RecommendedArtist } from "../interfaces/RecommendedArtist";
 import RecommendedArtistCard from "../components/RecommendedArtistCard";
 import { retrieveArtists } from "../api/artistsAPI";
 import Auth from '../utils/auth';
+import TopTracksCard from "../components/TopTracksCard";
 
 const Discover = () => {
   const [favoriteArtist, setFavoriteArtist] = useState<string>(''); // State to capture user's input
@@ -43,7 +44,7 @@ const Discover = () => {
         console.log('log: data', data);
         if (response.ok) {
           setArtists(data.toptracks.track); // Add the new artist to the list
-          setFavoriteArtist(''); // Clear input field after submission
+          // setFavoriteArtist(''); // Clear input field after submission *** if this is uncommented the playlist will not show the input name
         } else {
           setError("Artist not found");
         }
@@ -54,6 +55,8 @@ const Discover = () => {
   };
 
   console.log('log: artists', artists);
+  const tracks = artists.map((artist) => artist.name);
+  console.log('log: tracks', tracks);
 
   return (
     <section>
@@ -75,9 +78,15 @@ const Discover = () => {
       {error && <p>{error}</p>}
 
       {/* Map through the list of recommended artists */}
+<<<<<<< HEAD
       {artists?.map((artist) => (
         <RecommendedArtistCard key={artist.name} artist={artist} />// Pass the artist object as a prop
       ))}
+=======
+      {/* display the top tracks card only when the submit buttn is pushed */}
+      {tracks.length > 0 && (
+      <TopTracksCard FavoriteArtist={favoriteArtist} tracks={tracks} />)}
+>>>>>>> 01944109e23aa0046834eed7b59a89edbbda8719
     </section>
   );
 };

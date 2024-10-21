@@ -16,7 +16,7 @@ const PlaylistCard: React.FC<PlaylistProps> = ({ playlists, handleUpdate, handle
                 <div className="row align-center mb-5" key={playlist.id}>
                     <div className="col-md-6">
                         <img 
-                            src={playlist.image} 
+                            src={playlist.image || 'https://via.placeholder.com/150'}  // Fallback image if none exists
                             alt={playlist.title} 
                             style={{ width: '100%', borderRadius: '8px' }} 
                         />
@@ -25,11 +25,15 @@ const PlaylistCard: React.FC<PlaylistProps> = ({ playlists, handleUpdate, handle
                     <div className="col-md-6">
                         <h4>Top Tracks:</h4>
                         <ul>
-                            {playlist.tracks.slice(0, 5).map((track) => (
+                            {playlist.tracks?.length ? (
+                              playlist.tracks.slice(0, 5).map((track) => (
                                 <li key={track.id}>
-                                    {track.name} by {track.artist}
+                                  {track.name} by {track.artist}
                                 </li>
-                            ))}
+                              ))
+                            ) : (
+                              <p>No tracks available</p>
+                            )}
                         </ul>
                         <button onClick={() => handleUpdate(playlist.id)}>Update Playlist</button> {/* Button to update playlist */}
                         <button onClick={() => handleDelete(playlist.id)}>Delete Playlist</button> {/* Button to delete playlist */}
