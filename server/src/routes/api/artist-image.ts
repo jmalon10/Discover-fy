@@ -11,3 +11,8 @@ router.get('/artist-images', async (req, res) => {
       return res.status(400).json({ error: 'Artist query is required' });
     }
   
+    try {
+        // Make the request to the Deezer API
+        const response = await fetch(`https://api.deezer.com/search/artist?q=${artistQuery}`);
+        const data = await response.json();
+    
