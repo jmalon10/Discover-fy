@@ -3,6 +3,7 @@ import { RecommendedArtist } from "../interfaces/RecommendedArtist";
 import RecommendedArtistCard from "../components/RecommendedArtistCard";
 import { retrieveArtists } from "../api/artistsAPI";
 import Auth from '../utils/auth';
+import TopTracksCard from "../components/TopTracksCard";
 
 const Discover = () => {
   const [favoriteArtist, setFavoriteArtist] = useState<string>(''); // State to capture user's input
@@ -77,9 +78,8 @@ const Discover = () => {
       {error && <p>{error}</p>}
 
       {/* Map through the list of recommended artists */}
-      {artists?.map((artist) => (
-        <RecommendedArtistCard key={artist.name} artist={artist} />
-      ))}
+      
+        <TopTracksCard FavoriteArtist={favoriteArtist} tracks={tracks} />
     </section>
   );
 };
