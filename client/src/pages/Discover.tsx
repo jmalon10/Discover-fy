@@ -67,6 +67,7 @@ const Discover = () => {
         <label htmlFor="favoriteArtist">Enter your favorite artist:</label>
         <input
           type="text"
+          className="text-black"
           id="favoriteArtist"
           value={favoriteArtist}
           onChange={(e) => setFavoriteArtist(e.target.value)} // Update state when user types
