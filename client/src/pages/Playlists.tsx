@@ -14,7 +14,7 @@ const Playlists = () => {
     if (artist && playlistTitle) {
       try {
         // Retrieve the artist's tracks using the artist name
-        const artistData = await retrieveArtists(artist); // Call to artistsAPI.tsx
+        const artistData = await retrieveArtists(); // Call to artistsAPI.tsx
         if (!artistData || !artistData.toptracks || !artistData.toptracks.track) {
           console.error('Artist data not found');
           return;
