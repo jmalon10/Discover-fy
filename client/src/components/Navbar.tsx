@@ -122,7 +122,7 @@ const Navbar = () => {
         <li className="nav-item">
           <Link
             to="/playlists"  // Changed to lowercase to match the route in App.tsx
-            className={`nav-link ${currentPage === '/Playlists' ? 'active text-activeGreen' : 'text-white'}`}
+            className={`nav-link ${currentPage === '/playlists' ? 'active text-activeGreen' : 'text-white'}`}
           >
             Playlists
           </Link>
