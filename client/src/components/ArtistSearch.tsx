@@ -76,7 +76,7 @@ const ArtistSearch = () => {
     </div>
     <div className="w-40">
       <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Drake_July_2016.jpg/800px-Drake_July_2016.jpg"
+        src="https://e-cdn-images.dzcdn.net/images/artist/5d2fa7f140a6bdc2c864c3465a61fc71/500x500-000000-80-0-0.jpg"
         alt="Drake"
         className="w-full h-auto rounded-lg shadow-md"
       />
