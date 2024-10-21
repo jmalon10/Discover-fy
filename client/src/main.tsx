@@ -9,7 +9,7 @@ import Home from './pages/Home.tsx';
 import Login from './pages/Login.tsx';
 import Discover from './pages/Discover.tsx';
 // import Playlists from './pages/Playlists.tsx';
-// import { ProtectedRoute } from './components/ProtectedRoute.tsx';
+import { ProtectedRoute } from './components/ProtectedRoute.tsx';
 
 
 const router = createBrowserRouter([
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />
+        element: (<ProtectedRoute><Home /></ProtectedRoute>)
       }, 
       {
         path: '/login',
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       }, 
       {
         path: '/discover',
-        element: <Discover />//added protected route
+        element: (<ProtectedRoute><Discover /></ProtectedRoute>)
       }, 
       // {
       //   path: '/playlists',
