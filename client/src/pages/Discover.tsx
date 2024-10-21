@@ -54,6 +54,8 @@ const Discover = () => {
   };
 
   console.log('log: artists', artists);
+  const tracks = artists.map((artist) => artist.name);
+  console.log('log: tracks', tracks);
 
   return (
     <section>
