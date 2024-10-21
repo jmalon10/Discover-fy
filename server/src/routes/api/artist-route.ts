@@ -28,10 +28,10 @@ router.get('/tracksByArtist', async (req: Request, res: Response) => {
 });
 
 // Route to fetch artist images from Deezer
-router.get('/artist-images', async (req, res) => {
+router.post('/artist-images', async (req, res) => {
 
   try {
-      const {artist} = req.query; // Get the query parameter (e.g., artist name)
+      const {artist} = req.body; // Get the query parameter (e.g., artist name)
 
       // Make the request to the Deezer API
       const response = await fetch(`https://api.deezer.com/search/artist?q=${artist}`);
