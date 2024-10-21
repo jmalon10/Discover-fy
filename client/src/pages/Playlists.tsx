@@ -1,62 +1,69 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import PlaylistCard from '../components/Playlist'; // Component to display each playlist
-import { getPlaylists, createPlaylist, updatePlaylist, deletePlaylist } from '../api/playlistService'; // API functions
+import { retrieveArtists } from '../api/artistsAPI'; // Import the artist retrieval function
 import type { PlaylistData } from '../interfaces/Playlist';
 
-
 const Playlists = () => {
-  const [playlists, setPlaylists] = useState<PlaylistData[]>([]);
+  const [playlists, setPlaylists] = useState<PlaylistData[]>([]); // State to hold playlists
 
-  // Fetch all playlists when the component loads
-  useEffect(() => {
-    const fetchPlaylists = async () => {
-      const data = await getPlaylists(); // Fetch playlists from API
-      setPlaylists(data);
-    };
-
-    fetchPlaylists();
-  }, []);
-
-  // Function to create a new playlist
+  // Function to create a new playlist from artist tracks
   const handleCreate = async () => {
-    const title = prompt("Enter the new playlist title:"); // Prompt user for a playlist title
-    if (title) {
-      const newPlaylist: PlaylistData = {
-        id: Math.floor(Math.random() * 1000), // Temporary ID
-        title,
-        image: 'https://via.placeholder.com/150', // Placeholder image
-        tracks: [],
-      };
-      const createdPlaylist = await createPlaylist(newPlaylist);
-      if (createdPlaylist) {
-        setPlaylists([...playlists, createdPlaylist]); // Update state with new playlist
+    const artist = prompt("Enter the artist's name:"); // Prompt user to enter an artist name
+    const playlistTitle = prompt("Enter the new playlist title:"); // Prompt user for a playlist title
+
+    if (artist && playlistTitle) {
+      try {
+        // Retrieve the artist's tracks using the artist name
+        const artistData = await retrieveArtists(artist); // Call to artistsAPI.tsx
+        if (!artistData || !artistData.toptracks || !artistData.toptracks.track) {
+          console.error('Artist data not found');
+          return;
+        }
+
+        // Format the tracks to match the playlist data structure
+        const tracks = artistData.toptracks.track.map((track: any) => ({
+          name: track.name,
+          artist: track.artist.name
+        }));
+
+        // Create the new playlist
+        const newPlaylist: PlaylistData = {
+          id: Math.floor(Math.random() * 1000), // Temporary ID
+          title: playlistTitle,
+          image: 'https://via.placeholder.com/150', // Placeholder image
+          tracks: tracks
+        };
+
+        // Update the state to add the new playlist to the list
+        setPlaylists([...playlists, newPlaylist]); // Add the new playlist to the list
+
+      } catch (error) {
+        console.error('Error retrieving artist tracks or creating playlist:', error);
       }
     }
   };
 
-  // Function to update an existing playlist
+  // Function to update an existing playlist title
   const handleUpdate = async (id: number) => {
     const newTitle = prompt("Enter the new playlist title:");
     if (newTitle) {
-      const updatedPlaylist = await updatePlaylist(id, { title: newTitle });
-      if (updatedPlaylist) {
-        setPlaylists(playlists.map((playlist) =>
-          playlist.id === id ? { ...playlist, title: newTitle } : playlist
-        ));
-      }
+      // Update the title of the playlist in the state
+      setPlaylists(playlists.map((playlist) =>
+        playlist.id === id ? { ...playlist, title: newTitle } : playlist
+      ));
     }
   };
 
   // Function to delete a playlist
   const handleDelete = async (id: number) => {
-    await deletePlaylist(id); // Delete playlist from API
-    setPlaylists(playlists.filter((playlist) => playlist.id !== id)); // Remove playlist from state
+    // Remove the playlist from the state
+    setPlaylists(playlists.filter((playlist) => playlist.id !== id));
   };
 
   return (
     <div className="playlists-page">
       <h1>Your Playlists</h1>
-      <button onClick={handleCreate}>Create New Playlist</button> {/* Button to create playlist */}
+      <button onClick={handleCreate}>Create New Playlist from Artist</button> {/* Button to create playlist */}
       <PlaylistCard playlists={playlists} handleUpdate={handleUpdate} handleDelete={handleDelete} /> {/* Display playlists */}
     </div>
   );
