@@ -65,8 +65,10 @@ const Discover = () => {
       </h1>
 
       {/* Form to enter favorite artist */}
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="favoriteArtist">Enter your favorite artist:</label>
+      <form onSubmit={handleSubmit} className="mt-8">
+        <label htmlFor="favoriteArtist" className="text-lg mr-4">
+          Enter your favorite artist:
+          </label>
         <input
           type="text"
           className="text-black"
