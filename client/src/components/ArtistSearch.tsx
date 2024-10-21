@@ -80,6 +80,10 @@ const ArtistSearch = () => {
          alt="Drake"
          className="w-full h-auto rounded-lg shadow-md"
        />
+          <p className="mt-2 text-lg font-medium">Drake</p>
+    </div>
+  </div>
+</section>
   </div>
 </section>
 
