@@ -53,5 +53,14 @@ router.put('/:id', async (req: Request, res: Response) => {
 });
 // // DELETE /api/playlists/:id - Delete a playlist
 // router.delete('/:id', deletePlaylist);
+export const deletePlaylist = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    await Playlist.destroy({ where: { id } });
+    res.status(200).json({ message: 'Playlist deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to delete playlist' });
+  }
+};
 
 export { router as playlistRouter };
