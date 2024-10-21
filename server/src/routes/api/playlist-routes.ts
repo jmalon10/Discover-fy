@@ -6,7 +6,14 @@ import type { Request, Response } from 'express';
 const router = Router();
 
 // GET /api/playlists - Fetch all playlists
-// router.get('/', getPlaylists);
+router.get('/getAllPlaylists', async (_req: Request, res: Response) => {
+  try {
+    const playlists = await Playlist.findAll();
+    res.json(playlists);
+  } catch (error: any) {
+    res.status(500).json({ message: error.message });
+  }
+});
 
 // POST /api/playlists - Create a new playlist
 router.post('/createPlaylist', async (req: Request, res: Response) => {
@@ -22,6 +29,7 @@ router.post('/createPlaylist', async (req: Request, res: Response) => {
       res.status(400).json({ message: error.message });
     }
 });
+
 
 // // PUT /api/playlists/:id - Update an existing playlist
 // router.put('/:id', updatePlaylist);
