@@ -34,7 +34,23 @@ router.post('/createPlaylist', async (req: Request, res: Response) => {
 
 // // PUT /api/playlists/:id - Update an existing playlist
 // router.put('/:id', updatePlaylist);
+router.put('/:id', async (req: Request, res: Response) => {
+  const { id } = req.params;
+  const { tracks, FavoriteArtist } = req.body;
 
+  try {
+    const playlist = await Playlist.findByPk(id);
+    if (!playlist) {
+      return res.status(404).json({ message: 'Playlist not found' });
+    }
+
+    const updatedPlaylist = await playlist.update({ tracks, FavoriteArtist });
+    return res.status(200).json(updatedPlaylist);
+  } catch (error: any) {
+    console.log(error);
+    return res.status(400).json({ message: error.message });
+  }
+});
 // // DELETE /api/playlists/:id - Delete a playlist
 // router.delete('/:id', deletePlaylist);
 
