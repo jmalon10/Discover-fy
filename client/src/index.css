@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -1747,4 +1750,21 @@ form [type='radio'] {
   width: 100%;  /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
   max-width: 200px; /* Set a maximum width */
+}
+
+/* main title animation */
+@keyframes pulsate {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6);
+  }
+}
+
+.pulsating-text {
+  animation: pulsate 1.5s ease-in-out infinite;
 }

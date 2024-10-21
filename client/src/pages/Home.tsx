@@ -51,13 +51,10 @@ const Home = () => {
         </div>
       ) : (
         <ArtistSearch />
-      )}
-      <footer>
-        <p>&copy; 2024</p>
-      </footer>
-
-    </>
+      )}  
+    </> 
   );
-};
+}
+
 
 export default Home;

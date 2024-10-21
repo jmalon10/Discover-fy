@@ -11,7 +11,7 @@ export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
     if (!isLoggedIn) {
         return (
             <div>
-                <h1>Welcome to Discover-fy</h1>
+        
                 <p>Please login to continue</p>
             </div>
         )

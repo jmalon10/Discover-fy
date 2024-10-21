@@ -53,26 +53,27 @@ const ArtistSearch = () => {
     <div className="container mt-5">
       {/* Header */}
       <header className="text-center">
-        <h1>Welcome to Discover-fy</h1>
+       
         <p>Your personal music playlist manager</p>
       </header>
 
       {/* Artist Images Section */}
       <section className="artist-images text-center mt-4">
-        <h2>Discover New Artists</h2>
-        <div className="row mt-3">
-          {artists.map((artist, index) => (
-            <div key={index} className="col-md-3">
-              {artist.image ? (
-                <img src={artist.image} alt={artist.name} className="img-fluid" />
-              ) : (
-                <p>No image available</p>
-              )}
-              <p>{artist.name}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+  <h2>Discover New Artists</h2>
+  <div className="flex flex-wrap justify-center mt-3">
+    {artists.map((artist, index) => (
+      <div key={index} className="w-1/4 p-2">
+        {artist.image ? (
+          <img src={artist.image} alt={artist.name} className="img-fluid" />
+        ) : (
+          <p>No image available</p>
+        )}
+        <p>{artist.name}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
 
       {/* Call to Action Button */}
       <section className="text-center mt-4">
