@@ -1,5 +1,16 @@
 # Discover-fy
 
+## Table of Contents
+- [Description](#description)
+- [Features](#features)
+- [License](#license)
+- [Technologies Used](#technologies-used)
+- [Installation and Usage](#installation-and-usage)
+- [Acknowledgements](#acknowledgements)
+- [Deployed Application](#deployed-application)
+- [App Preview](#app-preview)
+- [Contact](#contact)
+
 ## Description
 Streamline your music experience with Discover-fy to seamlessly create, manage and organize playlists, explore new music, and receive curated song recommendations. Our app intelligently adapts to your preferences, ensuring that every playlist and discovery feels uniquely yours
 
