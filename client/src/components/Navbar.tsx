@@ -98,7 +98,10 @@ const Navbar = () => {
 
   return (
     <div className="navbar bg-[#121212] text-white p-4 shadow-[0_0_20px_10px_rgba(255,255,255,0.8)] rounded-lg flex items-center justify-between mt-4">
-      <h1>DISCOVER-FY</h1>
+      <h1 className="font-bold text-shadow-green">
+  DISCOVER-FY
+</h1>
+
       <ul className="display-flex">
         <li className="nav-item">
           <Link

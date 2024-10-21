@@ -1767,3 +1767,7 @@ form [type='radio'] {
 .pulsating-text {
   animation: pulsate 1.5s ease-in-out infinite;
 }
+
+.text-shadow-green {
+  text-shadow: 0 0 15px rgba(29, 185, 84, 0.7);
+}
