@@ -126,18 +126,22 @@ const Navbar = () => {
         </li>
       </ul>
       <div>
-        {
-          // Conditional rendering based on loginCheck state
-          !loginCheck ? (
-            <button className="btn" type='button'>
-              <Link to='/login'>Login</Link>
-            </button>
-          ) : (
-            <button className="btn" type='button' onClick={() => {
-              auth.logout();  // Call logout() method from auth utility on button click
-            }}>Logout</button>
-          )
-        }
+      {!loginCheck ? (
+  <button className="btn bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
+    <Link to='/login' className="no-underline text-shadow-lg">Login</Link>
+  </button>
+) : (
+  <button 
+    className="btn bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded" 
+    type='button' 
+    onClick={() => {
+      auth.logout();
+    }}
+  >
+    <span className="text-shadow-lg">Logout</span>
+  </button>
+)}
+
       </div>
     </div>
   )
