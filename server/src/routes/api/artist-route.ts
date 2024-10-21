@@ -46,7 +46,9 @@ router.post('/artist-images', async (req, res) => {
         return res.status(500).json({ error: 'Failed to fetch artist images' });
       }
     });
-   
+  
+    // route to handle the post request from the client side
+
 
 export { router as artistRoute };
 

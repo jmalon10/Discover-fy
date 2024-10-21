@@ -24,7 +24,7 @@ const TopTracksCard: React.FC<TopTracksProps> = ({ tracks, FavoriteArtist }) => 
 
     const ascertainArtistImage = async () => {
         try {
-            const data = await retrieveArtistImage();
+            const data = await retrieveArtistImage(FavoriteArtist);
             setArtistImage(data);
         } catch (error) {
             console.log('Error retrieving artist image:', error);
