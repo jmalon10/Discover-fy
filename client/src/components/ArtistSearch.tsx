@@ -64,9 +64,12 @@ const ArtistSearch = () => {
 
       
 
+
+
+
       {/* Call to Action Button */}
       <section className="text-center mt-4">
-        <h3>Ready to discover your next playlist?</h3>
+
         <Link to="/discover">
           <button className="btn btn-primary btn-lg">Start Discovering</button>
         </Link>
