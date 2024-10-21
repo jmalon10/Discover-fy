@@ -74,7 +74,7 @@ const Discover = () => {
         />
         <button 
       type="submit" 
-      className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg shadow-lg transition duration-300 hover:bg-blue-600 hover:shadow-xl"
+      className="bg-[#1DB954] text-white font-semibold py-2 px-4 rounded-lg shadow-lg transition duration-300 hover:bg-green-600 hover:shadow-xl ml-2"
       >Submit</button>
       </form>
 
