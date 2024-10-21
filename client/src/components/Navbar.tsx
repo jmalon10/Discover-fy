@@ -97,13 +97,16 @@ const Navbar = () => {
   }, [loginCheck]);  // Dependency array ensures useEffect runs when loginCheck changes
 
   return (
-    <div className="navbar bg-gray-800 text-white p-4 shadow-[0_0_20px_10px_rgba(255,255,255,0.8)] rounded-lg flex items-center justify-between mt-4">
-      <h1>DISCOVER-FY</h1>
+    <div className="navbar bg-[#121212] text-white p-4 shadow-[0_0_20px_10px_rgba(255,255,255,0.8)] rounded-lg flex items-center justify-between mt-4">
+      <h1 className="font-bold text-shadow-green">
+  DISCOVER-FY
+</h1>
+
       <ul className="display-flex">
         <li className="nav-item">
           <Link
             to="/"
-            className={`nav-link ${currentPage === '/' ? 'active text-blue' : 'text-white'}`}
+            className={`nav-link ${currentPage === '/' ? 'active text-activeGreen' : 'text-white'}`}
           >
             Home
           </Link>
@@ -111,7 +114,7 @@ const Navbar = () => {
         <li className="nav-item">
           <Link
             to="/Discover"
-            className={`nav-link ${currentPage === '/Discover' ? 'active text-blue' : 'text-white'}`}
+            className={`nav-link ${currentPage === '/Discover' ? 'active text-activeGreen' : 'text-white'}`}
           >
             Discover 
           </Link>
@@ -119,30 +122,30 @@ const Navbar = () => {
         <li className="nav-item">
           <Link
             to="/playlists"  // Changed to lowercase to match the route in App.tsx
-            className={`nav-link ${currentPage === '/Playlists' ? 'active text-blue' : 'text-white'}`}
+            className={`nav-link ${currentPage === '/Playlists' ? 'active text-activeGreen' : 'text-white'}`}
           >
             Playlists
           </Link>
         </li>
       </ul>
       <div>
-      {!loginCheck ? (
-  <button className="btn bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
-    <Link to='/login' className="no-underline text-shadow-lg">Login</Link>
-  </button>
-) : (
-  <button 
-    className="btn bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded" 
-    type='button' 
-    onClick={() => {
-      auth.logout();
-    }}
-  >
-    <span className="text-shadow-lg">Logout</span>
-  </button>
-)}
+  {!loginCheck ? (
+    <button className="btn bg-activeGreen hover:bg-green-600 text-white py-2 px-4 rounded-lg">
+      <Link to='/login' className="no-underline text-shadow-lg">Login</Link>
+    </button>
+  ) : (
+    <button 
+      className="btn bg-mediumGray hover:bg-lightGray text-white py-2 px-4 rounded-lg" 
+      type='button' 
+      onClick={() => {
+        auth.logout();
+      }}
+    >
+      <span className="text-shadow-lg">Logout</span>
+    </button>
+  )}
+</div>
 
-      </div>
     </div>
   )
 }
