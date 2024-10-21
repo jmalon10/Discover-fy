@@ -10,13 +10,13 @@ interface TopTracksProps {
 // Define the component
 const TopTracksCard: React.FC<TopTracksProps> = ({ tracks, FavoriteArtist }) => {
     return (
-        <div className="bg-blue-900">
-            <div className="bg-blue-900">
-                <h5 className="text-lg font-semibold">{FavoriteArtist}</h5> {/* placeholder title, will need to add "entered artist name" */}
-                <ul>
+        <div className="bg-gray-900 text-white rounded-lg shadow-lg max-w-sm mx-auto overflow-hidden">
+            <div className="p-6">
+                <h5 className="text-lg font-semibold text-center mb-4">{FavoriteArtist}</h5> {/* placeholder title, will need to add "entered artist name" */}
+                <ul className= "space-y-3">
                     {/*create a listed item with each string in the tracks array*/}
                     {tracks.map((track, index) => (
-                        <li key={index}>{track}</li>
+                        <li key={index} className= "text-sm flex items-center justify-between p-2 hover:bg-blue-700 rounded transition">{track}</li>
                     ))}
                 </ul>
             </div>
