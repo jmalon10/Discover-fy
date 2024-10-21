@@ -12,7 +12,7 @@ const TopTracksCard: React.FC<TopTracksProps> = ({ tracks, FavoriteArtist }) => 
     return (
         <div className="bg-blue-900">
             <div className="bg-blue-900">
-                <h5 className="">{FavoriteArtist}</h5> {/* placeholder title, will need to add "entered artist name" */}
+                <h5 className="text-lg font-semibold">{FavoriteArtist}</h5> {/* placeholder title, will need to add "entered artist name" */}
                 <ul>
                     {/*create a listed item with each string in the tracks array*/}
                     {tracks.map((track, index) => (
