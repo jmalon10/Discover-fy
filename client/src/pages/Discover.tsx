@@ -60,7 +60,7 @@ const Discover = () => {
 
   return (
     <section>
-      <h1>This is the discover page!</h1>
+      <h1>Lets start discovering</h1>
 
       {/* Form to enter favorite artist */}
       <form onSubmit={handleSubmit}>
