@@ -5,8 +5,45 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JWT Authentication Review</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
+  <script src="https://cdn.tailwindcss.com"></script>
+</body>
+  <script>
+    
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+  
+            spotifyGreenStart: '#1DB954',
+            spotifyGreenEnd: '#000000',
+          },
+      
+          backgroundImage: {
+            'spotify-gradient': 'linear-gradient(to bottom, #1DB954, #000000)',
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    @import 'tailwindcss/base';
+    @import 'tailwindcss/components';
+    @import 'tailwindcss/utilities';
+  </style>
+
+</head>
+<body class="bg-spotify-gradient min-h-screen flex flex-col justify-center items-center">
+  <div class="text-white text-center">
+
+<!--Main Content-->
+    <h1 class="text-4xl font-bold mb-4">Welcome to Discover-fy</h1>
+    <p class="text-lg">Experience music with a vibe!</p>
+    
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
