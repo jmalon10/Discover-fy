@@ -22,7 +22,7 @@ MIT License
 - Tailwind CSS
 - Vite
 - Last.Fm API [https://www.last.fm/api]
-- Muzooka: Artist Photos API [https://www.muzooka.com/developers/artist-photos-api]
+- Deezer [https://developers.deezer.com/api]
 
 ## Acknowledgements
 - Render for hosting
@@ -31,7 +31,7 @@ MIT License
 Discover-fy [https://discover-fy.onrender.com/]
 
 ## App Preview
-
+![Discover-fy App Screenshot](https://github.com/jmalon10/Discover-fy/blob/tailwind/jilani/Discover-fy.png?raw=true)
 
 ## Contact
 For questions or feedback, please reach out to our Developer Team
