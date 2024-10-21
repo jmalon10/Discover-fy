@@ -16,7 +16,7 @@ const TopTracksCard: React.FC<TopTracksProps> = ({ tracks, FavoriteArtist }) => 
                 <ul className= "space-y-2">
                     {/*create a listed item with each string in the tracks array*/}
                     {tracks.map((track, index) => (
-                        <li key={index} className= "text-sm flex items-center justify-between p-2 hover:bg-blue-700 rounded transition">{track}</li>
+                        <li key={index} className= "text-sm flex items-center justify-between p-2">{track}</li>
                     ))}
                 </ul>
             </div>
