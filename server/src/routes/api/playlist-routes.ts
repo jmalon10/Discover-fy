@@ -7,6 +7,15 @@ const router = Router();
 
 // GET /api/playlists - Fetch all playlists
 // router.get('/', getPlaylists);
+router.get('/', async (_req: Request, res: Response) => {
+  try {
+    const playlists = await Playlist.findAll(); // Retrieve all playlists
+    res.status(200).json(playlists);
+  } catch (error) {
+    console.error('Error fetching playlists:', error);
+    res.status(500).json({ error: 'Failed to fetch playlists' });
+  }
+});
 
 // POST /api/playlists - Create a new playlist
 router.post('/createPlaylist', async (req: Request, res: Response) => {
