@@ -68,6 +68,10 @@ const ArtistSearch = () => {
     </div>
     <div className="w-40">
       <img
+         src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Billie_Eilish_at_Pukkelpop_%28cropped%29.jpg/800px-Billie_Eilish_at_Pukkelpop_%28cropped%29.jpg"
+         alt="Billie Eilish"
+         className="w-full h-auto rounded-lg shadow-md"
+       />
   </div>
 </section>
 
