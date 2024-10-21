@@ -35,6 +35,17 @@ MIT License
 - Last.Fm API [https://www.last.fm/api]
 - Muzooka: Artist Photos API [https://www.muzooka.com/developers/artist-photos-api]
 
+## Installation and Usage
+
+### Prerequisites
+- Node.js
+- PostgreSQL
+
+### Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/jmalon10/Discover-fy.git
+
 ## Acknowledgements
 - Render for hosting
 
