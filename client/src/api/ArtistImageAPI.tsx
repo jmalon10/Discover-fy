@@ -25,4 +25,4 @@ const retrieveArtistImage = async (artist: string): Promise<ArtistImage | null> 
   }
 };
 
-export { retrieveArtistImage };
+export { retrieveArtistImage }; 
