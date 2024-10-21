@@ -97,7 +97,7 @@ const Navbar = () => {
   }, [loginCheck]);  // Dependency array ensures useEffect runs when loginCheck changes
 
   return (
-    <div className="navbar bg-gray-800 text-white p-4 shadow-[0_0_20px_10px_rgba(255,255,255,0.8)] rounded-lg flex items-center justify-between mt-4">
+    <div className="navbar bg-[#121212] text-white p-4 shadow-[0_0_20px_10px_rgba(255,255,255,0.8)] rounded-lg flex items-center justify-between mt-4">
       <h1>DISCOVER-FY</h1>
       <ul className="display-flex">
         <li className="nav-item">
