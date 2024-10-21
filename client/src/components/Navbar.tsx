@@ -103,7 +103,7 @@ const Navbar = () => {
         <li className="nav-item">
           <Link
             to="/"
-            className={`nav-link ${currentPage === '/' ? 'active text-blue' : 'text-white'}`}
+            className={`nav-link ${currentPage === '/' ? 'active text-activeGreen' : 'text-white'}`}
           >
             Home
           </Link>
@@ -111,7 +111,7 @@ const Navbar = () => {
         <li className="nav-item">
           <Link
             to="/Discover"
-            className={`nav-link ${currentPage === '/Discover' ? 'active text-blue' : 'text-white'}`}
+            className={`nav-link ${currentPage === '/Discover' ? 'active text-activeGreen' : 'text-white'}`}
           >
             Discover 
           </Link>
@@ -119,7 +119,7 @@ const Navbar = () => {
         <li className="nav-item">
           <Link
             to="/playlists"  // Changed to lowercase to match the route in App.tsx
-            className={`nav-link ${currentPage === '/Playlists' ? 'active text-blue' : 'text-white'}`}
+            className={`nav-link ${currentPage === '/Playlists' ? 'active text-activeGreen' : 'text-white'}`}
           >
             Playlists
           </Link>

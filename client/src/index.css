@@ -1715,7 +1715,6 @@ form [type='radio'] {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: lemonchiffon; /* Mint green */
 }
 
 .navbar h1 {
@@ -1735,12 +1734,12 @@ form [type='radio'] {
 
 .navbar .nav-link {
   text-decoration: none;
-  color: black;
+  color: #B3B3B3;
 }
 
 .navbar .nav-link.active {
   font-weight: bold;
-  color: #007BFF; /* Bootstrap primary color */
+  color: #1DB954;
 }
 
 
