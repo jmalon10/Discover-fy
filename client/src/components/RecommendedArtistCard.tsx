@@ -11,11 +11,11 @@ const RecommendedArtistCard: React.FC<RecommendedArtistCardProps> = ({ artist })
     return (
         <div className="card">
             <div className="card-body">
-                <h5 className="card-title">{artist.Name}</h5> {/* placeholder title, will need to add "entered artist name" */}
+                <h5 className="card-title">{artist.name}</h5> {/* placeholder title, will need to add "entered artist name" */}
                 <ul>
-                    {artist.TopTracks.map((track, index) => (
+                    {/* {artist.map((track, index) => (
                         <li key={index}>{track}</li>
-                    ))}
+                    ))} */}
                 </ul>
             </div>
         </div>
