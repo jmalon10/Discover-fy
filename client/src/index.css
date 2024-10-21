@@ -432,7 +432,7 @@ a {
 
 a:hover {
   color: #065b83;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* HEIGHT / WIDTH UTILS */
@@ -915,10 +915,6 @@ a:hover {
 
 .text-black {
   color: #000000 !important;
-}
-
-.text-link {
-  color: #1b89bc !important;
 }
 
 /* BACKGROUND UTILS */
