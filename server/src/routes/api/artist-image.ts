@@ -22,3 +22,10 @@ router.get('/artist-images', async (req, res) => {
             image: artist.picture_big,  // You can change this to picture_small, picture_medium, etc.
           }));
       
+          return res.json(artistImages); // Send the artist images as the response
+        } catch (error: any) {
+          return res.status(500).json({ error: 'Failed to fetch artist images' });
+        }
+      });
+      
+      export default router;
