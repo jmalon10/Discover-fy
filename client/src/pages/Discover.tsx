@@ -73,9 +73,11 @@ const Discover = () => {
           onChange={(e) => setFavoriteArtist(e.target.value)} // Update state when user types
         />
         <button 
-      type="submit" 
-      className="bg-[#1DB954] text-white font-semibold py-2 px-4 rounded-lg shadow-lg transition duration-300 hover:bg-green-600 hover:shadow-xl ml-2"
-      >Submit</button>
+  type="submit" 
+  className="bg-[#1DB954] text-white font-semibold py-2 px-4 rounded-lg shadow-lg border-2 border-darkerBg transition duration-300 hover:bg-green-600 hover:shadow-xl m-2"
+>
+  Submit
+</button>
       </form>
 
       {/* Display error message if any */}
