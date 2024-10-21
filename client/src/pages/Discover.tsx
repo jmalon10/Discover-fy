@@ -44,7 +44,7 @@ const Discover = () => {
         console.log('log: data', data);
         if (response.ok) {
           setArtists(data.toptracks.track); // Add the new artist to the list
-          setFavoriteArtist(''); // Clear input field after submission
+          // setFavoriteArtist(''); // Clear input field after submission *** if this is uncommented the playlist will not show the input name
         } else {
           setError("Artist not found");
         }
@@ -78,8 +78,9 @@ const Discover = () => {
       {error && <p>{error}</p>}
 
       {/* Map through the list of recommended artists */}
-      
-        <TopTracksCard FavoriteArtist={favoriteArtist} tracks={tracks} />
+      {/* display the top tracks card only when the submit buttn is pushed */}
+      {tracks.length > 0 && (
+      <TopTracksCard FavoriteArtist={favoriteArtist} tracks={tracks} />)}
     </section>
   );
 };
