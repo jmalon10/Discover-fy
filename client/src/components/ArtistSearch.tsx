@@ -54,12 +54,12 @@ const ArtistSearch = () => {
       <header className="text-center">
         <p>Discover Top Tracks from Artists You Love</p>
       </header>
-     {/* Artist Images Section */}
-     <section className="artist-images text-center mt-4">
+    {/* Artist Images Section */}
+<section className="artist-images text-center mt-4">
   <h2 className="text-2xl font-bold mb-4">Popular Artists</h2>
   <div className="flex flex-wrap justify-center gap-6 mt-3">
-    <div className="w-40
-       <img
+    <div className="w-40">
+      <img
         src="https://e-cdn-images.dzcdn.net/images/artist/ed04cfc9f8c7c016277edf011439d0ac/500x500-000000-80-0-0.jpg"
         alt="Ariana Grande"
         className="w-full h-auto rounded-lg shadow-md"
@@ -68,26 +68,24 @@ const ArtistSearch = () => {
     </div>
     <div className="w-40">
       <img
-         src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Billie_Eilish_at_Pukkelpop_%28cropped%29.jpg/800px-Billie_Eilish_at_Pukkelpop_%28cropped%29.jpg"
-         alt="Billie Eilish"
-         className="w-full h-auto rounded-lg shadow-md"
-       />
-             <p className="mt-2 text-lg font-medium">Billie Eilish</p>
+        src="https://e-cdn-images.dzcdn.net/images/artist/8eab1a9a644889aabaca1e193e05f984/500x500-000000-80-0-0.jpg"
+        alt="Billie Eilish"
+        className="w-full h-auto rounded-lg shadow-md"
+      />
+      <p className="mt-2 text-lg font-medium">Billie Eilish</p>
     </div>
     <div className="w-40">
       <img
-         src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Drake_July_2016.jpg/800px-Drake_July_2016.jpg"
-         alt="Drake"
-         className="w-full h-auto rounded-lg shadow-md"
-       />
-          <p className="mt-2 text-lg font-medium">Drake</p>
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Drake_July_2016.jpg/800px-Drake_July_2016.jpg"
+        alt="Drake"
+        className="w-full h-auto rounded-lg shadow-md"
+      />
+      <p className="mt-2 text-lg font-medium">Drake</p>
     </div>
   </div>
 </section>
-  </div>
-</section>
 
-      
+
 
       {/* Call to Action Button */}
       <section className="text-center mt-4">
