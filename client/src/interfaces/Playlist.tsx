@@ -6,7 +6,6 @@ export interface Track {
 
 export interface PlaylistData {
     id: number;
-    title: string;
-    image: string;
-    tracks: Track[];
+    FavoriteArtist: string;
+    tracks: string;
 }
