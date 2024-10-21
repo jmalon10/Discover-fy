@@ -57,7 +57,7 @@ const Discover = () => {
 
   return (
     <section>
-      <h1>This is the discover page!</h1>
+      <h1>This is the discover page!</h1>// Display a heading
 
       {/* Form to enter favorite artist */}
       <form onSubmit={handleSubmit}>
@@ -65,7 +65,7 @@ const Discover = () => {
         <input
           type="text"
           id="favoriteArtist"
-          value={favoriteArtist}
+          value={favoriteArtist}// Display the value of the input field
           onChange={(e) => setFavoriteArtist(e.target.value)} // Update state when user types
         />
         <button type="submit">Submit</button>
@@ -76,7 +76,7 @@ const Discover = () => {
 
       {/* Map through the list of recommended artists */}
       {artists?.map((artist) => (
-        <RecommendedArtistCard key={artist.name} artist={artist} />
+        <RecommendedArtistCard key={artist.name} artist={artist} />// Pass the artist object as a prop
       ))}
     </section>
   );

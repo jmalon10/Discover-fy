@@ -8,6 +8,7 @@ interface RecommendedArtistCardProps {
 
 // Define the component
 const RecommendedArtistCard: React.FC<RecommendedArtistCardProps> = ({ artist }) => {
+    console.log()
     return (
         <div className="card">
             <div className="card-body">
