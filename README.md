@@ -54,6 +54,13 @@ Discover-fy [https://discover-fy.onrender.com/]
 
 ## App Preview
 
+Check out some of the features in action below:
+
+- **Playlist Management**: Easily create, edit, and delete playlists.
+- **Song Recommendations**: Get song recommendations based on your preferences.
+- **Mobile Responsive Design**: Our app is optimized for all screen sizes.
+
+![Discover-fy Preview](link-to-your-app-preview-image-or-gif)
 
 ## Contact
 For questions or feedback, please reach out to our Developer Team
