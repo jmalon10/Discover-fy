@@ -1,6 +1,6 @@
 import Auth from '../utils/auth';
 
-const retrieveArtists = async () => {
+const retrieveArtists = async (_artist?: string) => {
     try {
       const response = await fetch('/api/artists/tracksByArtist', {
         headers: {
