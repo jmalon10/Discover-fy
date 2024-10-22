@@ -17,7 +17,7 @@ Streamline your music experience with Discover-fy to seamlessly create, manage a
 
 ## Features
 - **User Authentication**: Secure sign-up and log-in with JWT-based authentication to protect your data.
-- Playlist Management
+- **Playlist Management**: Easily create, update, and delete playlists with a user-friendly interface.
 - Personalized Song Recommendations
 - Search Functionality
 
