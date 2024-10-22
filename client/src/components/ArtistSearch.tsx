@@ -52,8 +52,10 @@ const ArtistSearch = () => {
     <div className="container mt-5">
       {/* Header */}
       <header className="text-center">
-        <p>Discover Top Tracks from Artists You Love</p>
-      </header>
+  <p className="text-lg">
+    Discover Top Tracks from Artists You Love <span className="text-red-500">❤️</span>
+  </p>
+</header>
     {/* Artist Images Section */}
 <section className="artist-images text-center mt-4">
   <h2 className="text-2xl font-bold mb-4">Popular Artists</h2>
