@@ -32,10 +32,23 @@ export const login = async (req: Request, res: Response) => {
   return res.json({ token });  // Send the token as a JSON response
 };
 
+export const createUser = async (req: Request, res: Response) => {
+  const { username, password, email } = req.body;  // Extract username and password from request body
+
+  // Find the user in the database by username
+  const user = await User.create({
+    username,
+    password,
+    email,
+  });
+  return res.json(user);  // Send the user as a JSON response
+};
+
 // Create a new router instance
 const router = Router();
 
 // POST /login - Login a user
 router.post('/login', login);  // Define the login route
+router.post('/createUser', createUser);
 
 export default router;  // Export the router instance
