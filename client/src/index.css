@@ -432,7 +432,7 @@ a {
 
 a:hover {
   color: #065b83;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* HEIGHT / WIDTH UTILS */
@@ -915,10 +915,6 @@ a:hover {
 
 .text-black {
   color: #000000 !important;
-}
-
-.text-link {
-  color: #1b89bc !important;
 }
 
 /* BACKGROUND UTILS */
@@ -1715,7 +1711,6 @@ form [type='radio'] {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: lemonchiffon; /* Mint green */
 }
 
 .navbar h1 {
@@ -1735,12 +1730,12 @@ form [type='radio'] {
 
 .navbar .nav-link {
   text-decoration: none;
-  color: black;
+  color: #B3B3B3;
 }
 
 .navbar .nav-link.active {
   font-weight: bold;
-  color: #007BFF; /* Bootstrap primary color */
+  color: #1DB954;
 }
 
 
@@ -1767,4 +1762,8 @@ form [type='radio'] {
 
 .pulsating-text {
   animation: pulsate 1.5s ease-in-out infinite;
+}
+
+.text-shadow-green {
+  text-shadow: 0 0 15px rgba(29, 185, 84, 0.7);
 }
