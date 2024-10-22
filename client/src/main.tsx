@@ -10,6 +10,7 @@ import Login from './pages/Login.tsx';
 import Discover from './pages/Discover.tsx';
 import Playlists from './pages/Playlists.tsx';
 import { ProtectedRoute } from './components/ProtectedRoute.tsx';
+import CreateUser from './pages/CreateUser.tsx';
 
 
 const router = createBrowserRouter([
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: '/playlists',
         element: <ProtectedRoute><Playlists /></ProtectedRoute>
+      }, 
+      {
+        path: '/createUser',
+        element: <CreateUser />
       }, 
     ]
   }
