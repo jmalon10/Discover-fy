@@ -3,6 +3,7 @@ import { useState, FormEvent, ChangeEvent } from "react";
 import Auth from '../utils/auth';  // Import the Auth utility for managing authentication state
 import { login } from "../api/authAPI";  // Import the login function from the API
 import { UserLogin } from "../interfaces/UserLogin";  // Import the interface for UserLogin
+import { Link } from "react-router-dom";
 
 const Login = () => {
   // State to manage the login form data
@@ -62,6 +63,11 @@ const Login = () => {
         {/* Submit button for the login form */}
         <div className="form-group">
           <button className="btn btn-primary" type='submit'>Login</button>
+        </div>
+        <div className="form-group">
+        <button className="btn btn-primary">
+      <Link to='/createUser'>Create Account</Link>
+    </button>
         </div>
       </form>
     </div>
