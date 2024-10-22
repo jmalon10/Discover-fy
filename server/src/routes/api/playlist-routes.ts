@@ -1,7 +1,6 @@
 import { Router } from 'express';
 import Playlist from '../../models/playlist.js';
 import type { Request, Response } from 'express';
-// import { createPlaylist, getPlaylists, updatePlaylist, deletePlaylist } from '../api/playlistService'; // Assuming you have these controller functions
 
 const router = Router();
 
@@ -30,12 +29,4 @@ router.post('/createPlaylist', async (req: Request, res: Response) => {
       res.status(400).json({ message: error.message });
     }
 });
-
-
-// // PUT /api/playlists/:id - Update an existing playlist
-// router.put('/:id', updatePlaylist);
-
-// // DELETE /api/playlists/:id - Delete a playlist
-// router.delete('/:id', deletePlaylist);
-
 export { router as playlistRouter };

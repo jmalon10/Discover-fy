@@ -44,6 +44,7 @@ const ArtistSearch = () => {
         })
       );
       setArtists(updatedArtists);
+      console.log(artists);
     };
 
     loadArtistImages();

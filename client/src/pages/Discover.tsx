@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { RecommendedArtist } from "../interfaces/RecommendedArtist";
-import RecommendedArtistCard from "../components/RecommendedArtistCard";
-import { retrieveArtists } from "../api/artistsAPI";
 import Auth from '../utils/auth';
 import TopTracksCard from "../components/TopTracksCard";
 
@@ -9,22 +7,6 @@ const Discover = () => {
   const [favoriteArtist, setFavoriteArtist] = useState<string>(''); // State to capture user's input
   const [error, setError] = useState<string | null>(null);
   const [artists, setArtists] = useState<RecommendedArtist[]>([]);
-
-  // when the component loads...
-  // useEffect(() => {
-  //   fetchArtists();
-  // }, []);
-
-  //  we want to fetch the artist data and put it in state
-  const fetchArtists = async () => {
-    try {
-      const data = await retrieveArtists();
-      console.log('log: data', data);
-      setArtists(data.toptracks.track);
-    } catch (err) {
-      console.log('Error from data retrieval:', err);
-    }
-  };
 
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
