@@ -58,6 +58,12 @@ MIT License
     DB_PASSWORD=''
     JWT_SECRET_KEY='mysecretshhh' 
 
+4. Start the development server:
+    cd server
+    npm run dev
+    cd ../client
+    npm run dev 
+    
 ## Acknowledgements
 - Render for hosting
 
