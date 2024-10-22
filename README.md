@@ -46,6 +46,18 @@ MIT License
    ```bash
    git clone https://github.com/jmalon10/Discover-fy.git
 
+2. Install dependencies for both client and server:
+   ```bash
+   cd client && npm install
+   cd ../server && npm install
+
+3. Set up environment variables:
+   Create a .env file in the server folder with the following:
+    DB_NAME='users_db'
+    DB_USER='postgres'
+    DB_PASSWORD=''
+    JWT_SECRET_KEY='mysecretshhh' 
+
 ## Acknowledgements
 - Render for hosting
 
