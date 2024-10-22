@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { RecommendedArtist } from "../interfaces/RecommendedArtist";
+
 import Auth from '../utils/auth';
 import TopTracksCard from "../components/TopTracksCard";
 
@@ -7,6 +8,7 @@ const Discover = () => {
   const [favoriteArtist, setFavoriteArtist] = useState<string>(''); // State to capture user's input
   const [error, setError] = useState<string | null>(null);
   const [artists, setArtists] = useState<RecommendedArtist[]>([]);
+
 
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
