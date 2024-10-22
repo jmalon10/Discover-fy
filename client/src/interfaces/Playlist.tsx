@@ -7,5 +7,5 @@ export interface Track {
 export interface PlaylistData {
     id: number;
     FavoriteArtist: string;
-    tracks: string;
+    tracks: string[];
 }
