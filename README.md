@@ -33,8 +33,37 @@ MIT License
 - Tailwind CSS
 - Vite
 - Last.Fm API [https://www.last.fm/api]
-- Muzooka: Artist Photos API [https://www.muzooka.com/developers/artist-photos-api]
+- Deezer [https://developers.deezer.com/api]
 
+## Installation and Usage
+
+### Prerequisites
+- Node.js
+- PostgreSQL
+
+### Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/jmalon10/Discover-fy.git
+
+2. Install dependencies for both client and server:
+   ```bash
+   cd client && npm install
+   cd ../server && npm install
+
+3. Set up environment variables:
+   Create a .env file in the server folder with the following:
+    DB_NAME='users_db'
+    DB_USER='postgres'
+    DB_PASSWORD=''
+    JWT_SECRET_KEY='mysecretshhh' 
+
+4. Start the development server:
+    cd server
+    npm run dev
+    cd ../client
+    npm run dev 
+    
 ## Acknowledgements
 - Render for hosting
 
@@ -42,6 +71,17 @@ MIT License
 Discover-fy [https://discover-fy.onrender.com/]
 
 ## App Preview
+
+
+Check out some of the features in action below:
+
+- **Playlist Management**: Easily create, edit, and delete playlists.
+- **Song Recommendations**: Get song recommendations based on your preferences.
+- **Mobile Responsive Design**: Our app is optimized for all screen sizes.
+
+![Discover-fy Preview](link-to-your-app-preview-image-or-gif)
+
+![Discover-fy App Screenshot](https://github.com/jmalon10/Discover-fy/blob/tailwind/jilani/Discover-fy.png?raw=true)
 
 
 ## Contact

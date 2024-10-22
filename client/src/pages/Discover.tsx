@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { RecommendedArtist } from "../interfaces/RecommendedArtist";
-import RecommendedArtistCard from "../components/RecommendedArtistCard";
-import { retrieveArtists } from "../api/artistsAPI";
+
 import Auth from '../utils/auth';
 import TopTracksCard from "../components/TopTracksCard";
 
@@ -10,21 +9,6 @@ const Discover = () => {
   const [error, setError] = useState<string | null>(null);
   const [artists, setArtists] = useState<RecommendedArtist[]>([]);
 
-  // when the component loads...
-  // useEffect(() => {
-  //   fetchArtists();
-  // }, []);
-
-  //  we want to fetch the artist data and put it in state
-  const fetchArtists = async () => {
-    try {
-      const data = await retrieveArtists();
-      console.log('log: data', data);
-      setArtists(data.toptracks.track);
-    } catch (err) {
-      console.log('Error from data retrieval:', err);
-    }
-  };
 
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
@@ -65,19 +49,23 @@ const Discover = () => {
       </h1>
 
       {/* Form to enter favorite artist */}
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="favoriteArtist">Enter your favorite artist:</label>
+      <form onSubmit={handleSubmit} className="mt-8">
+        <label htmlFor="favoriteArtist" className="text-lg mr-4">
+          Enter your favorite artist:
+          </label>
         <input
           type="text"
-          className="text-black"
+          className="text-black ml-2"
           id="favoriteArtist"
           value={favoriteArtist}
           onChange={(e) => setFavoriteArtist(e.target.value)} // Update state when user types
         />
         <button 
-      type="submit" 
-      className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg shadow-lg transition duration-300 hover:bg-blue-600 hover:shadow-xl"
-      >Submit</button>
+  type="submit" 
+  className="bg-[#1DB954] text-white font-semibold py-2 px-4 rounded-lg shadow-lg border-2 border-darkerBg transition duration-300 hover:bg-green-600 hover:shadow-xl m-2"
+>
+  Submit
+</button>
       </form>
 
       {/* Display error message if any */}
