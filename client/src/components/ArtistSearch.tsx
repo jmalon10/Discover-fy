@@ -52,7 +52,7 @@ const ArtistSearch = () => {
     <div className="container mt-5">
       {/* Header */}
       <header className="text-center">
-  <p className="text-lg">
+  <p className="text-lg font-bold">
     Discover Top Tracks from Artists You Love <span className="text-red-500">❤️</span>
   </p>
 </header>
