@@ -6,6 +6,7 @@ import type { Request, Response } from 'express';
 const router = Router();
 
 // GET /api/playlists - Fetch all playlists
+
 router.get('/getAllPlaylists', async (_req: Request, res: Response) => {
   try {
     const playlists = await Playlist.findAll();

@@ -60,22 +60,28 @@ const Discover = () => {
 
   return (
     <section>
-      <h1>This is the discover page!</h1>
+      <h1 className="text-1xl md:text-5xl font-bold italic">
+      Lets start discovering new music!
+      </h1>
 
       {/* Form to enter favorite artist */}
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="favoriteArtist">Enter your favorite artist:</label>
+      <form onSubmit={handleSubmit} className="mt-8">
+        <label htmlFor="favoriteArtist" className="text-lg mr-4">
+          Enter your favorite artist:
+          </label>
         <input
           type="text"
-          className="text-black"
+          className="text-black ml-2"
           id="favoriteArtist"
           value={favoriteArtist}
           onChange={(e) => setFavoriteArtist(e.target.value)} // Update state when user types
         />
         <button 
-      type="submit" 
-      className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg shadow-lg transition duration-300 hover:bg-blue-600 hover:shadow-xl"
-      >Submit</button>
+  type="submit" 
+  className="bg-[#1DB954] text-white font-semibold py-2 px-4 rounded-lg shadow-lg border-2 border-darkerBg transition duration-300 hover:bg-green-600 hover:shadow-xl m-2"
+>
+  Submit
+</button>
       </form>
 
       {/* Display error message if any */}
