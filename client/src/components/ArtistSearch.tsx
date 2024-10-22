@@ -92,7 +92,7 @@ const ArtistSearch = () => {
     </div>
     <div className="w-40">
       <img
-        src="https://e-cdn-images.dzcdn.net/images/artist/352a2d78032a02f1fd30b73a1d61c585/500x500-000000-80-0-0.jpg"
+        src="https://e-cdn-images.dzcdn.net/images/artist/65e0e96b7e014a245d693bad8bad57fc/500x500-000000-80-0-0.jpg"
         alt="SZA"
         className="w-full h-auto rounded-lg shadow-md"
       />
