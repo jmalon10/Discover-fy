@@ -1,6 +1,8 @@
 import express from 'express';
 import type { Request, Response } from 'express';
 import { ArtistImage, DeezerApiResponse } from '../../types/express/deezer.interface';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const router = express.Router();
 
@@ -11,8 +13,8 @@ router.get('/tracksByArtist', async (req: Request, res: Response) => {
 
     const response = await fetch(
       // get tracks from lastfm by artist
-      `https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=${artist}&api_key=a06b22dcf000d6d58066809b74bfb2b2&format=json`);
-
+      `https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=${artist}&api_key=${process.env.API_KEY}&format=json`);
+      console.log("API KEY", process.env.API_KEY);
     // send the tracks as json
     const tracks = await response.json();
     return res.json(tracks);
