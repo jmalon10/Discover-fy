@@ -81,11 +81,25 @@ const ArtistSearch = () => {
         className="w-full h-auto rounded-lg shadow-md"
       />
       <p className="mt-2 text-lg font-medium">Drake</p>
+      </div>
+    <div className="w-40">
+      <img
+        src="https://e-cdn-images.dzcdn.net/images/artist/c76832d7227d55acb4da6f0ec8cbfb47/500x500-000000-80-0-0.jpg"
+        alt="J Balvin"
+        className="w-full h-auto rounded-lg shadow-md"
+      />
+      <p className="mt-2 text-lg font-medium">J Balvin</p>
+    </div>
+    <div className="w-40">
+      <img
+        src="https://e-cdn-images.dzcdn.net/images/artist/352a2d78032a02f1fd30b73a1d61c585/500x500-000000-80-0-0.jpg"
+        alt="SZA"
+        className="w-full h-auto rounded-lg shadow-md"
+      />
+      <p className="mt-2 text-lg font-medium">SZA</p>
     </div>
   </div>
 </section>
-
-
 
       {/* Call to Action Button */}
       <section className="text-center mt-4">
