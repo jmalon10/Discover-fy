@@ -84,7 +84,7 @@ const ArtistSearch = () => {
       </div>
     <div className="w-40">
       <img
-        src="https://e-cdn-images.dzcdn.net/images/artist/c76832d7227d55acb4da6f0ec8cbfb47/500x500-000000-80-0-0.jpg"
+        src="https://e-cdn-images.dzcdn.net/images/artist/c5cd33708174e92c8e17d3c35fd8a033/500x500-000000-80-0-0.jpg"
         alt="J Balvin"
         className="w-full h-auto rounded-lg shadow-md"
       />
