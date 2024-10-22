@@ -1,7 +1,7 @@
 import {  useState } from "react";
 import { RecommendedArtist } from "../interfaces/RecommendedArtist";
 //import RecommendedArtistCard from "../components/RecommendedArtistCard";
-import { retrieveArtists } from "../api/artistsAPI";
+//import { retrieveArtists } from "../api/artistsAPI";
 import Auth from '../utils/auth';
 import TopTracksCard from "../components/TopTracksCard";
 
