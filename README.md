@@ -20,6 +20,7 @@ Streamline your music experience with Discover-fy to seamlessly create, manage a
 - **Playlist Management**: Easily create, update, and delete playlists with a user-friendly interface.
 - **Personalized Song Recommendations**: Receive song recommendations based on your listening history and preferences.
 - **Search Functionality**: Find artists, albums, and tracks with a powerful, integrated search system.
+- **Mobile Responsive Design**: Optimized for mobile, tablet, and desktop experiences.
 
 ## License
 MIT License
