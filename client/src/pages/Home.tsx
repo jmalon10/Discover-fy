@@ -32,6 +32,7 @@ const Home = () => {
       const data = await retrieveUsers();
       setUsers(users);
       console.log('Users:', data);
+      console.log('Users:', users);
     } catch (err) {
       console.error('Failed to retrieve users:', err);
       setError(true);

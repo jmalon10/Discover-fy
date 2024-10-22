@@ -1,6 +1,3 @@
-// getTopTracks method
-// /2.0/?method=artist.gettoptracks&artist=cher&api_key=YOUR_API_KEY&format=json
-
 import express from 'express';
 import type { Request, Response } from 'express';
 import { ArtistImage, DeezerApiResponse } from '../../types/express/deezer.interface';
