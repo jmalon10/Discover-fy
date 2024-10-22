@@ -6,7 +6,7 @@ import ArtistSearch from "../components/ArtistSearch";
 import auth from '../utils/auth';
 
 const Home = () => {
-  const [users, setUsers] = useState<UserData[]>([]);
+  const [users, setUsers] = useState<UserData[]>([]);//
   const [error, setError] = useState(false);
   const [loginCheck, setLoginCheck] = useState(false);
   
@@ -30,8 +30,9 @@ const Home = () => {
   const fetchUsers = async () => {
     try {
       const data = await retrieveUsers();
-      setUsers(data);
+      setUsers(users);
       console.log('Users:', data);
+      console.log('Users:', users);
     } catch (err) {
       console.error('Failed to retrieve users:', err);
       setError(true);

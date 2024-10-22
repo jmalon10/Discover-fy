@@ -33,7 +33,7 @@ MIT License
 - Tailwind CSS
 - Vite
 - Last.Fm API [https://www.last.fm/api]
-- Muzooka: Artist Photos API [https://www.muzooka.com/developers/artist-photos-api]
+- Deezer [https://developers.deezer.com/api]
 
 ## Installation and Usage
 
@@ -72,6 +72,7 @@ Discover-fy [https://discover-fy.onrender.com/]
 
 ## App Preview
 
+
 Check out some of the features in action below:
 
 - **Playlist Management**: Easily create, edit, and delete playlists.
@@ -79,6 +80,9 @@ Check out some of the features in action below:
 - **Mobile Responsive Design**: Our app is optimized for all screen sizes.
 
 ![Discover-fy Preview](link-to-your-app-preview-image-or-gif)
+
+![Discover-fy App Screenshot](https://github.com/jmalon10/Discover-fy/blob/tailwind/jilani/Discover-fy.png?raw=true)
+
 
 ## Contact
 For questions or feedback, please reach out to our Developer Team
