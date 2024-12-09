@@ -70,7 +70,7 @@ MIT License
 
 ## Deployed Application
 Discover-fy [https://discover-fy.onrender.com/]
-
+***** If the render deployment is not working, one of our team members will update the Last.fm [API](https://www.last.fm/api/account/create) key in the environment and the database connection following these steps: [Deploying Your Full-Stack Application on Render - Jackie Maloney](https://medium.com/@jmaloney11277/deploying-your-full-stack-application-on-render-1d7b9631d84f)
 ## App Preview
 
 
